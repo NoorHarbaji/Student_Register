@@ -1,0 +1,114 @@
+﻿@model Student_Register.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+            
+                <div class="container">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="row g-10">
+                            <div class="col-md-6 mx-auto col-lg-8">
+                                <div class="card bg-primary bg-gradient navbar-dark">
+                                    <div class="card-body text-center">
+                                        <img src="https://randomuser.me/api/portraits/men/11.jpg"
+                                             class="rounded-circle mb-5"
+                                             alt="" />
+                                        <h3 class="card-title mb-3">  @Html.DisplayFor(model => model.FirstName)</h3>
+                                        <p class="card-group text-white">
+                                            <dl class="row">
+                                                <dt class="col-sm-5">
+                                                    @Html.DisplayNameFor(model => model.ID)
+                                                </dt>
+                                                <dd class="col-sm-5">
+                                                    @Html.DisplayFor(model => model.Contact)
+                                                </dd>
+                                                <dt class="col-sm-5">
+                                                    @Html.DisplayNameFor(model => model.LastName)
+                                                </dt>
+                                                <dd class="col-sm-5">
+                                                    @Html.DisplayFor(model => model.LastName)
+                                                </dd>
+                                                <dt class="col-sm-5">
+                                                    @Html.DisplayNameFor(model => model.Gender)
+                                                </dt>
+                                                <dd class="col-sm-5">
+                                                    @Html.DisplayFor(model => model.Gender)
+                                                </dd>
+                                                <dt class="col-sm-5">
+                                                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                                                </dt>
+                                                <dd class="col-sm-5">
+                                                    @Html.DisplayFor(model => model.DateOfBirth)
+                                                </dd>
+                                                <dt class="col-sm-5">
+                                                    @Html.DisplayNameFor(model => model.Contact)
+                                                </dt>
+                                                <dd class="col-sm-5">
+                                                    @Html.DisplayFor(model => model.Contact)
+                                                </dd>
+                                                <dt class="col-sm-5">
+                                                    @Html.DisplayNameFor(model => model.Email)
+                                                </dt>
+                                                <dd class="col-sm-5">
+                                                    @Html.DisplayFor(model => model.Email)
+                                                </dd>
+                                                <dt class="col-sm-5">
+                                                    @Html.DisplayNameFor(model => model.Batch.ID)
+                                                </dt>
+                                                <dd class="col-sm-5">
+                                                    @Html.DisplayFor(model => model.Batch.ID)
+                                                </dd>
+                                            </dl>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            
+                <div class="container">
+                    <div class="table-responsive">
+                        <table class="table align-middle table-light table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Course ID
+                                    </th>
+                                    <th>
+                                        Course Name
+                                    </th>
+                                    <th>
+                                        Grade
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Records)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CourseID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Course.CourseName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Grade)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                    <div>
+                        <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+                        <a class="btn btn-info" asp-action="Index">Back to List</a>
+                    </div>
+               
+
+           

@@ -1,0 +1,33 @@
+﻿@model Student_Register.Models.Batch
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<section class="p-5 text-light text-center text-sm-start">
+    <div class="container">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ID)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ID)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.year)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.year)
+            </dd>
+        </dl>
+        </div>
+    </section>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a class="btn btn-primary bg-gradient mb-3 mb-md-0" asp-action="Index">Back</a>
+        </form>
+

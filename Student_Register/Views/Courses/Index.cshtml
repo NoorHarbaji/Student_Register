@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Student_Register.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<section class="bg-primary bg-gradient text-light p-5">
+    <div class="container">
+        <div class="d-md-flex
+             justify-content-between
+             align-items-center">
+            <a class="btn btn-danger bg-gradient mb-3 mb-md-0" asp-action="Create">Create New</a>
+            <a class="btn btn-danger bg-gradient mb-3 mb-md-0" asp-action="Index">Back</a>
+        </div>
+    </div>
+</section>
+<section class="p-5 text-light text-center text-sm-start">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table text-dark align-middle table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Duration)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CourseName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Batch)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Duration)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CourseName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Batch.ID)
+                            </td>
+                            <td>
+                                <a class="btn btn-danger bg-gradient" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                                <a class="btn btn-danger bg-gradient" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                                <a class="btn btn-danger bg-gradient" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </section>

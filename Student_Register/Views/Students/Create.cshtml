@@ -1,0 +1,73 @@
+﻿@model Student_Register.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="p-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="FirstName" class="control-label"></label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="LastName" class="control-label"></label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Gender" class="control-label"></label>
+                                <input asp-for="Gender" class="form-control" />
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DateOfBirth" class="control-label"></label>
+                                <input asp-for="DateOfBirth" class="form-control" />
+                                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Contact" class="control-label"></label>
+                                <input asp-for="Contact" class="form-control" />
+                                <span asp-validation-for="Contact" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                             <div class="form-group">
+                                <label asp-for="BatchID" class="control-label"></label>
+                                <select asp-for="BatchID" class="form-control" asp-items="ViewBag.BatchID"></select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary bg-gradient" />
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <img class="img-fluid w-50 d-none d-sm-block" src="~/Image/students.jpg" alt="Alternate Text" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-primary bg-gradient text-light p-5">
+    <div class="container">
+        <div class="align-middle">
+            <a class="btn btn-danger bg-gradient mb-3 mb-md-0" asp-action="Index">Back</a>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

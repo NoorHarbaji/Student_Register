@@ -1,0 +1,33 @@
+﻿@*model Student_Register.Models.Batches*@
+@model Student_Register.Models.ViewModels.BatchCourse
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+
+<h4>Courses</h4>
+<section class="bg-primary bg-gradient text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table align-middle table-striped">
+                @foreach (var item in Model.Courses)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CourseName)
+                        </td>
+                        <td>
+                            <a class="btn btn-danger bg-gradient" asp-controller="Courses" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a class="btn btn-danger bg-gradient" asp-controller="Courses" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a class="btn btn-danger bg-gradient" asp-controller="Courses" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        </div>
+</section>

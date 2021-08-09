@@ -1,0 +1,42 @@
+﻿@model Student_Register.Models.Batch
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="bg-primary bg-gradient text-light align-items-center p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ID" class="control-label"></label>
+                        <input asp-for="ID" class="form-control" />
+                        <span asp-validation-for="ID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="year" class="control-label"></label>
+                        <input asp-for="year" class="form-control" />
+                        <span asp-validation-for="year" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary bg-gradient" />
+                    </div>
+                </form>
+            </div>
+        </div>
+            </div>
+    </section>
+    <section class="bg-primary bg-gradient text-light align-items-center p-5">
+        <div class="container">
+            <div class="d-md-flex
+             align-items-center">
+                <a class="btn btn-danger bg-gradient mb-3 mb-md-0" asp-action="Index">Back</a>
+            </div>
+        </div>
+    </section>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
